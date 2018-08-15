@@ -2,16 +2,23 @@ import {
   SHOW_ALL,
   FILTER_BY_ZIP,
   TOGGLE_MAP,
-  FETCH_IMAGE
-} from './constants'
+  SHOW_IMAGE,
+  LOAD_ALL_DOGS
+} from './constants';
 
-export function showAll ({ dogs }) {
+export function showAll (responses) {
   return {
     type: SHOW_ALL,
-    dogs
+    responses
   };
 }
 
+export function loadAllDogs (responses) {
+  return {
+    type: LOAD_ALL_DOGS,
+    responses
+  };
+}
 
 export function filterByZip ({ zip }) {
   return {
@@ -20,15 +27,14 @@ export function filterByZip ({ zip }) {
   };
 }
 
-
 export function toggleMap () {
   return {
     type: TOGGLE_MAP
   };
 }
 
-export function showAll () {
+export function showImage () {
   return {
-    type: SHOW_ALL
+    type: SHOW_IMAGE
   };
 }
