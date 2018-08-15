@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import { Header } from './Header'
 import axios from 'axios';
 
 class App extends Component {
@@ -8,16 +8,19 @@ class App extends Component {
     super(props);
     this.state = {};
   }
-  componentWillMount() {
+  componentDidMount() {
     // Here is a link to the API Documentation: https://dev.socrata.com/
     axios.get('https://data.austintexas.gov/resource/h8x4-nvyi.json')
       .then((res) => {
         console.log(res);
+        // deal with this later
+        // create fake store in json and set it to state for now
         // TODO: Decided how to store the response data.
       })
   }
 
   render() {
+    // console.log(this.state.data)
     return (
       <div className="App">
         <div className="App-header">
@@ -25,8 +28,9 @@ class App extends Component {
         </div>
 
         <p className="App-intro">
+          <Header data={'hello'}/>
           {/* TODO: Delete line below */}
-          Open Dev Tools Console to see data.
+          {/* {this.state} */}
           {/* TODO: Display data here, maybe? Be creative! 🎉 */}
         </p>
       </div>
