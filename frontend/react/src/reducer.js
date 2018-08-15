@@ -9,7 +9,8 @@ const initialState = {
   responses: [],
   showMap: false,
   filterbyZip: false,
-  filteredResponses: []
+  filteredResponses: [],
+  showAll: true
 };
 
 export const reducer = (state = initialState, action) => {

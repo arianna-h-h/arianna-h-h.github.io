@@ -4,6 +4,8 @@ import axios from 'axios';
 
 import './App.css';
 import { Header } from './Header';
+import List from './List';
+import Map from './Map';
 
 class App extends Component {
   constructor (props) {
@@ -23,18 +25,17 @@ class App extends Component {
   }
 
   render () {
+    const { showAll, showMap, filterByZip, responses } = this.props;
+    console.log('responses', responses)
     // console.log(this.state.data)
     return (
       <div className='App'>
         <div className='App-header'>
-          <h2>Dangerous Dogs</h2>
+          <Header />
         </div>
-
         <p className='App-intro'>
-          <Header data={'hello'} />
-          {/* TODO: Delete line below */}
-          {/* {this.state} */}
-          {/* TODO: Display data here, maybe? Be creative! 🎉 */}
+          {(showAll || filterByZip) && <List data={responses} />}
+          {/* {showMap && <Map />} */}
         </p>
       </div>
     );

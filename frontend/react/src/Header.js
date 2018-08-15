@@ -1,6 +1,5 @@
 import React from 'react';
 
-export const Header = ({data}) => (
-  <div> {data}
-  {this.state}</div>
-)
+export const Header = () => (
+      <h2>Dangerous Dogs</h2>
+);
