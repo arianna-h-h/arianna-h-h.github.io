@@ -14,5 +14,6 @@
 
 ### Limitations
 - There were several features that I wanted to build but ran out of time. This includes google image searching the description of the dog in the single dog view and displaying the image (currently a question mark icon is the placeholder). I also wanted to build a google map with markers for where the dangerous dogs live.
-- If I had more time, I would write unit tests for each action creator, ensuring that the action creator returned the correct action. I would likely use Jest for this because of the ease of use between Jest and React. I would also test the reducer by mocking the initial state and calling different actions and comparing the new state with the expected output. 
+- If I had more time, I would write unit tests for each action creator, ensuring that the action creator returned the correct action. I would likely use Jest for this because of the ease of use between Jest and React. I would also test the reducer by mocking the initial state and calling different actions and comparing the new state with the expected output.
 - I would also add data validation for the zip code form, either by writing a regex expression or hitting an API with all valid zip codes in it and searching for the zip code. I would need to research whether zip codes always follow the same rules (I'm unsure of if they skip any numbers).
+- I would also add more colors/better styling. 
