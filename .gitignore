@@ -5,6 +5,4 @@ __pycache__
 .vscode
 /dist
 /build
-node_modules
-dist
 yarn-error.log
