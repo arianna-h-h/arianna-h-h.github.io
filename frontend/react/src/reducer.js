@@ -1,17 +1,32 @@
 import {
   SHOW_ALL,
-  // FILTER_BY_ZIP,
+  FIND_CLOSEST,
   TOGGLE_MAP,
   LOAD_ALL_DOGS
 } from './constants';
 
 const initialState = {
   responses: [],
-  showMap: false,
+  showMap: true,
   filterbyZip: false,
   filteredResponses: [],
   showAll: true
 };
+
+/* TODO update function to find closest address to zipcode by using GPS points
+and Google Geocoding API */
+function findSimilarZip (zip, responses) {
+  let closestDog = null;
+  let currentDifference = 100000;
+  responses.forEach(response => {
+    let difference = Math.abs(response.zip_code - zip);
+    if (difference <= currentDifference) {
+      closestDog = response;
+      currentDifference = difference;
+    }
+  });
+  return [closestDog];
+}
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -23,17 +38,19 @@ export const reducer = (state = initialState, action) => {
     case SHOW_ALL:
       return {
         ...state,
+        showAll: true,
         showMap: false,
         filterbyZip: false,
         filteredResponses: []
       };
-    // case FILTER_BY_ZIP:
-    //   return {
-    //       ...state,
-    //       state.filter(where action.zip == state.zip)
-    //       filterByZip: true
-    //
-    //   };
+    case FIND_CLOSEST:
+      return {
+        ...state,
+        filteredResponses: findSimilarZip(action.zip, action.responses),
+        filterByZip: true,
+        showAll: false
+      };
+    // FIXME map functionality is not yet working
     case TOGGLE_MAP:
       return {
         ...state,

@@ -1,15 +1,14 @@
 import {
   SHOW_ALL,
-  FILTER_BY_ZIP,
+  FIND_CLOSEST,
   TOGGLE_MAP,
   SHOW_IMAGE,
   LOAD_ALL_DOGS
 } from './constants';
 
-export function showAll (responses) {
+export function showAllDogs () {
   return {
-    type: SHOW_ALL,
-    responses
+    type: SHOW_ALL
   };
 }
 
@@ -20,10 +19,11 @@ export function loadAllDogs (responses) {
   };
 }
 
-export function filterByZip ({ zip }) {
+export function findClosest (zip, responses) {
   return {
-    type: FILTER_BY_ZIP,
-    zip
+    type: FIND_CLOSEST,
+    zip,
+    responses
   };
 }
 
