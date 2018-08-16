@@ -3,5 +3,8 @@ node_modules
 .env
 __pycache__
 .vscode
-./backend/yarn-error.log
-./frontend/react/dist
+/dist
+/build
+node_modules
+dist
+yarn-error.log
