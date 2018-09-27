@@ -1,4 +1,4 @@
-# Arianna Haradon's City of Austin Dev Challenges
+# Arianna Haradon's Dangerous Dogs App
 
 ### To get started:
 
